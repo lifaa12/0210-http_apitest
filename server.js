@@ -102,16 +102,6 @@ const requestListener = (req, res) => {
     });
   }
 
-
-
-
-
-
-
-
-
-
-
   else {
     res.writeHead(404, headers);
     res.write(JSON.stringify({
@@ -119,9 +109,8 @@ const requestListener = (req, res) => {
       "message": "無此路由"
     }));
     res.end();
-  }
-
+  };
 };
 
 const server = http.createServer(requestListener);
-server.listen(3030);
+server.listen(process.env.PORT || 3030);
